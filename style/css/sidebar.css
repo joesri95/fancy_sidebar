@@ -1,0 +1,226 @@
+body.sidebar-show {
+	overflow: hidden;
+}
+
+.content,
+.menu-stripes,
+.sidebar-btn {
+	-webkit-transition: -webkit-transform .5s ease-in-out;
+	transition: transform .5s ease-in-out;
+}
+
+.content {
+	margin-top: 80px;
+}
+
+.content.sidebar-show:before {
+	content: "";
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.5);
+	z-index: 5000;
+	overflow: hidden;
+}
+
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 300px;
+	height: 100%;
+	padding-right: 70px;
+	background: #FFF;
+	color: #333;
+	-webkit-transform: translate(-230px);
+	transform: translate(-230px);
+	z-index: 5001;
+	-webkit-transition: -webkit-transform .5s ease-in-out,padding .5s ease-in-out;
+	transition: transform .5s ease-in-out,padding .5s ease-in-out;
+}
+
+.sidebar.show,
+.sidebar:hover {
+	padding-right: 0;
+	-webkit-transform: translate(0);
+	transform: translate(0);
+	overflow-y: auto;
+}
+
+.sidebar-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 70px;
+	width: 70px;
+	background-color: transparent;
+	border: 0;
+	z-index: 5002;
+}
+
+.menu-stripes,
+.menu-toggle-btns {
+	position: relative;
+}
+
+.sidebar-btn.sidebar-show {
+	-webkit-transform: translate(220px);
+	transform: translate(220px);
+}
+
+.menu-stripes {
+	height: 4px;
+	width: 35px;
+	margin: 7px auto;
+	background-color: #000;
+	border-radius: 5px;
+}
+
+.sidebar-btn.sidebar-show .menu-stripes {
+	margin: -3px auto;
+}
+
+.sidebar-btn.sidebar-show .menu-stripes:nth-child(1) {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.sidebar-btn.sidebar-show .menu-stripes:nth-child(2) {
+	display: none;
+}
+
+.sidebar-btn.sidebar-show .menu-stripes:nth-child(3) {
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.sidebar-btn:not(.sidebar-show):hover>.menu-stripes {
+	-webkit-animation: hoverButton .4s infinite;
+	animation: hoverButton .4s infinite;
+}
+
+.menu {
+	border-bottom: 1px solid #EEE;
+}
+
+.menu-btn,
+.menu-link {
+	outline: 0!important;
+}
+
+.menu-link {
+	-webkit-transition: color .2s;
+	transition: color .2s;
+}
+
+.menu-link:hover {
+	color: #2e86c1;
+}
+
+.menu-btn:hover {
+	background: #333;
+	color: #FFF;
+}
+
+.menu-toggle-btns>.menu-link {
+	width: 246px;
+}
+
+.menu-level1 a {
+	color: #333;
+}
+
+.menu-level1>li {
+	border-top: 1px solid #EEE;
+}
+
+.menu-level1 .menu-link {
+	padding: 15px 20px;
+}
+
+.menu-level2 {
+	background: #F4F4F4;
+}
+
+.menu-level2 .menu-link {
+	padding: 15px 15px 15px 30px;
+}
+
+.menu-level2>li+li {
+	border-top: 1px solid #E9E9E9;
+}
+
+.menu-level2 .menu-btn {
+	border-color: #E9E9E9;
+}
+
+.menu-level3 {
+	background: #E5E8E8;
+}
+
+.menu-level3 .menu-link {
+	padding: 15px 15px 15px 45px;
+}
+
+.menu-btn {
+	-webkit-transition: background .2s,color .2s;
+	transition: background .2s,color .2s;
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 54px;
+	height: 100%;
+	padding: 19px;
+	border-left: 1px solid #EEE;
+	line-height: 1;
+}
+
+.menu-btn>div {
+	font-weight: 700;
+	-webkit-transition: -webkit-transform .2s ease-in-out;
+	transition: transform .2s ease-in-out;
+}
+
+.menu-btn.active>div {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.submenu {
+	display: none;
+}
+
+@-webkit-keyframes hoverButton {
+
+0%,100% {
+	left: 0;
+}
+
+33% {
+	left: -1px;
+}
+
+66% {
+	left: 6px;
+}
+
+}
+
+@keyframes hoverButton {
+
+0%,100% {
+	left: 0;
+}
+
+33% {
+	left: -1px;
+}
+
+66% {
+	left: 6px;
+}
+
+}
+
